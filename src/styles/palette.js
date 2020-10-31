@@ -59,7 +59,7 @@ export default {
         main: '#FFFFFF',
     },
     text: {
-        primary: '#264653',
+        primary: '#B9CBD7',
         secondary: '#2a9d8f',
         disabled: '#B9CBD7',
         hint: '#6F94AD',
