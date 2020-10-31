@@ -15,12 +15,11 @@ const HomeNavigator = () => {
             tabBarOptions={{
                 style: {
                     paddingVertical: 10,
-                    paddingBottom: 10,
-                    height: 70,
+                    paddingBottom: 25,
+                    height: 85,
                     borderTopColor: theme.palette.grey.light,
                     borderBottomColor: theme.palette.grey.light,
                     borderTopWidth: 1,
-                    borderBottomWidth: 1,
 
                     shadowOpacity: 0,
                     elevation: 0,
