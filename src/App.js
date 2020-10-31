@@ -11,10 +11,11 @@ const App = () => (
     <ThemeProvider>
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-                <SafeAreaView style={{ flex: 1, backgroundColor: 'black' }}>
-                    <StatusBar barStyle="dark-content" />
-                    <Navigator />
-                </SafeAreaView>
+                <StatusBar
+                    backgroundColor={'transparent'}
+                    barStyle="dark-content"
+                />
+                <Navigator />
             </PersistGate>
         </Provider>
     </ThemeProvider>
