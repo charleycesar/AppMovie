@@ -3,11 +3,11 @@ import AppMovieSplash from '@modules/startup/components/AppMovieSplash'
 import { useNavigation } from '@modules/navigation/hooks'
 
 const Startup = () => {
-    const { navigate } = useNavigation()
+    const { replace } = useNavigation()
 
     React.useEffect(() => {
         setTimeout(() => {
-            navigate('home')
+            replace('home')
         }, 3000)
     }, [])
 
