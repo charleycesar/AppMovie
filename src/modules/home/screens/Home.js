@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <Screen>
             <Box>
-                <Text>Teste</Text>
+                <Text variant="h4">Os Mais Populares</Text>
             </Box>
         </Screen>
     )

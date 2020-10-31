@@ -17,10 +17,9 @@ const HomeNavigator = () => {
                     paddingVertical: 10,
                     paddingBottom: 25,
                     height: 85,
-                    borderTopColor: theme.palette.grey.light,
-                    borderBottomColor: theme.palette.grey.light,
-                    borderTopWidth: 1,
-
+                    borderTopColor: theme.palette.primary.main,
+                    borderBottomColor: theme.palette.primary.main,
+                    borderTopWidth: 0.5,
                     shadowOpacity: 0,
                     elevation: 0,
                 },

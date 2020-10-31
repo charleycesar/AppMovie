@@ -65,7 +65,7 @@ export default {
         hint: '#6F94AD',
     },
     background: {
-        paper: '#FFFFFF',
+        paper: 'black',
         default: '#FAFAFA',
         greyLight: '#EFEFEF',
         backdrop: 'rgba(0, 0, 0, 0.4)',
