@@ -14,7 +14,7 @@
   },
   "engines": {
     "yarn": "1.22.4",
-    "node": ">=v13.11.0"
+    "node": ">=13.10.1"
   },
   "private": true,
   "scripts": {
