@@ -1,0 +1,81 @@
+export default {
+    type: 'light',
+    common: {
+        black: '#000000',
+        white: '#FFFFFF',
+    },
+    default: {
+        main: '#264653',
+    },
+    primary: {
+        light: '#264653',
+        main: '#264653',
+        dark: '#264653',
+        contrastText: '#FFFFFF',
+    },
+    secondary: {
+        light: '#2a9d8f',
+        main: '#2a9d8f',
+        dark: '#2a9d8f',
+        contrastText: '#FFFFFF',
+    },
+    error: {
+        light: '#e76f51',
+        main: '#e76f51',
+        dark: '#e76f51',
+        contrastText: '#FFFFFF',
+    },
+    warning: {
+        light: '#e9c46a',
+        main: '#e9c46a',
+        dark: '#e9c46a',
+        contrastText: '#FFFFFF',
+    },
+    success: {
+        light: '#2a9d8f',
+        main: '#2a9d8f',
+        dark: '#2a9d8f',
+        contrastText: '#FFFFFF',
+    },
+    accent: {
+        light: '#e76f51',
+        main: '#e76f51',
+        dark: '#e76f51',
+        contrastText: '#FFFFFF',
+    },
+    grey: {
+        soft: '#e5e5e5',
+        lighter: '#e5e5e5',
+        light: '#e5e5e5',
+        main: '#e5e5e5',
+        medium: '#e5e5e5',
+        dark: '#e5e5e5',
+        darkest: '#e5e5e5',
+        contrastText: '#e5e5e5',
+        lightGrey: '#e5e5e5',
+    },
+    white: {
+        opaque: '#FFFFFF99',
+        main: '#FFFFFF',
+    },
+    text: {
+        primary: '#264653',
+        secondary: '#2a9d8f',
+        disabled: '#B9CBD7',
+        hint: '#6F94AD',
+    },
+    background: {
+        paper: '#FFFFFF',
+        default: '#FAFAFA',
+        greyLight: '#EFEFEF',
+        backdrop: 'rgba(0, 0, 0, 0.4)',
+    },
+    action: {
+        active: 'rgba(0, 0, 0, 0.54)',
+        hover: 'rgba(0, 0, 0, 0.08)',
+        hoverOpacity: 0.08,
+        selected: 'rgba(0, 0, 0, 0.14)',
+        disabled: 'rgba(0, 0, 0, 0.26)',
+        disabledBackground: 'rgba(0, 0, 0, 0.12)',
+    },
+}
