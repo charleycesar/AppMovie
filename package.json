@@ -1,6 +1,21 @@
 {
   "name": "appMovie",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Este aplicativo permite que você assista filmes. O appMovie utiliza a api do the movie database.",
+  "author": "Charley Oliveira",
+  "license": "MIT",
+  "homepage": "https://charleycesar.github.io/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charleycesar/AppMovie.git"
+  },
+  "bugs": {
+    "url": "https://github.com/charleycesar/AppMovie/issues"
+  },
+  "engines": {
+    "yarn": "1.22.4",
+    "node": ">=v13.11.0"
+  },
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -43,7 +58,6 @@
     "babel-jest": "^26.6.1",
     "babel-plugin-module-resolver": "^4.0.0",
     "commitizen": "^4.2.2",
-    "cz-conventional-changelog": "^3.3.0",
     "cz-customizable": "^6.3.0",
     "eslint": "^7.12.1",
     "eslint-import-resolver-babel-module": "^5.2.0",

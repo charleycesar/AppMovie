@@ -27,12 +27,15 @@ module.exports = {
         { value: 'WIP', name: 'WIP:      Work in progress' },
     ],
     scopes: [
-        { name: 'UI' },
-        { name: 'config' },
-        { name: 'router' },
         { name: 'api' },
+        { name: 'config' },
+        { name: 'commitizen' },
+        { name: 'UI' },
+        { name: 'router' },
         { name: 'redux' },
         { name: 'styles' },
+        { name: 'modules' },
+        { name: 'core' },
     ],
 
     allowTicketNumber: false,
@@ -47,8 +50,6 @@ module.exports = {
         body:
             'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
         breaking: 'List any BREAKING CHANGES (optional):\n',
-        footer:
-            'List any ISSUES CLOSED by this change (optional). E.g.: #31, #34:\n',
         confirmCommit:
             'Are you sure you want to proceed with the commit above?',
     },
