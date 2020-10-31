@@ -1,6 +1,9 @@
 // eslint-disable-next-line no-undef
 System.config({
-  paths: {
-    '@/*': './src/*',
-  },
-});
+    paths: {
+        '@/*': './src/*',
+        '@styles/*': './src/styles/*',
+        '@modules/*': './src/modules/*',
+        '@UI/*': './src/components/UI/*',
+    },
+})

@@ -11,4 +11,5 @@ module.exports = {
       'babel-module': {},
     },
   },
-};
+  ident: 4,
+}
