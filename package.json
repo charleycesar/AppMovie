@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "commit": "cz"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.1",
@@ -41,6 +42,9 @@
     "@react-native-community/eslint-config": "^2.0.0",
     "babel-jest": "^26.6.1",
     "babel-plugin-module-resolver": "^4.0.0",
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
     "eslint": "^7.12.1",
     "eslint-import-resolver-babel-module": "^5.2.0",
     "eslint-plugin-import": "^2.22.1",
@@ -50,5 +54,13 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./cz.config.js"
+    }
   }
 }
