@@ -8,10 +8,18 @@ import MovieList from '@modules/home/components/MovieList'
 import { ScrollView } from 'react-native'
 import Layout from '@styles/layout'
 import Box from '@UI/Box'
+import moment from 'moment'
+import Thumbnail from '@UI/Thumbnail'
 
 const Home = () => {
     const [openDetail, setOpenDetail] = React.useState(false)
-    const { getMovies, popularMovies, topRatedMovies } = useMovies()
+    const {
+        getMovies,
+        getDetails,
+        movieDetails,
+        popularMovies,
+        topRatedMovies,
+    } = useMovies()
     const options = [{ label: 'Filmes' }, { label: 'TV Shows' }]
 
     React.useEffect(() => {
@@ -20,6 +28,7 @@ const Home = () => {
     }, [])
 
     const onMoviePress = (movieSelected) => {
+        getDetails(movieSelected.id)
         setOpenDetail(true)
     }
 
@@ -45,14 +54,23 @@ const Home = () => {
                     size={'medium'}
                     showBackDrop
                     onClose={() => setOpenDetail(false)}>
-                    <Box py={2}>
-                        <Text variant={'h4'} align="center">
-                            Titulo do filme
-                        </Text>
-                        <Text variant={'h4'}>Ano do filme</Text>
-                        <Text>Classificação:</Text>
-                        <Text>Avaliação:</Text>
-                        <Text>Descrição:</Text>
+                    <Box p={1}>
+                        <Box direction={'row'} pb={2}>
+                            <Thumbnail
+                                uri={`/w200${movieDetails.poster_path}`}
+                            />
+                            <Box px={2}>
+                                <Text variant={'h4'}>{movieDetails.title}</Text>
+                                <Text variant={'h5'}>
+                                    {moment(movieDetails.release_date).format(
+                                        'Y',
+                                    )}
+                                </Text>
+                                <Text>Classificação:</Text>
+                                <Text>Avaliação:</Text>
+                            </Box>
+                        </Box>
+                        <Text variant={'body2'}>{movieDetails.overview}</Text>
                     </Box>
                 </BottomSheet>
             )}

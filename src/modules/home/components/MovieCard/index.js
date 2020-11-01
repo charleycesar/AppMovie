@@ -2,7 +2,6 @@ import Box from '@UI/Box'
 import { propTypes, defaultProps } from './propTypes'
 import React from 'react'
 import Thumbnail from '@UI/Thumbnail'
-import Text from '@UI/Text'
 import moment from 'moment'
 import { TouchableOpacity } from 'react-native'
 
