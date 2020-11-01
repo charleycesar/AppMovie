@@ -34,6 +34,7 @@
     "@reduxjs/toolkit": "^1.4.0",
     "axios": "^0.21.0",
     "lottie-react-native": "^3.5.0",
+    "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-native": "0.63.3",
