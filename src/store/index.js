@@ -16,9 +16,11 @@ import createDebugger from 'redux-flipper'
 import startup from './Startup'
 import popularMovies from './PopularMovies'
 import topRatedMovies from './TopRatedMovies'
+import movie from './Movie'
 
 const reducers = combineReducers({
     startup,
+    movie,
     popularMovies,
     topRatedMovies,
 })
