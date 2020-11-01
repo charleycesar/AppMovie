@@ -4,6 +4,7 @@ import React from 'react'
 import { SafeAreaView, StatusBar } from 'react-native'
 import useConnectionListener from '@modules/connection/hooks/useConnection'
 import { Snackbar } from 'react-native-paper'
+import { useTheme } from '@styles/hooks'
 
 import { propTypes, defaultProps } from './propTypes'
 
@@ -17,11 +18,13 @@ const Screen = ({
     statusBarTranslucent,
     bgcolor,
 }) => {
+    const theme = useTheme()
     const { connected } = useConnectionListener()
     const [toast, setToast] = React.useState(false)
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: 'transparent' }}>
+        <SafeAreaView
+            style={{ flex: 1, backgroundColor: theme.palette.grey.darkest }}>
             <StatusBar
                 barStyle={statusBarStyle}
                 translucent={statusBarTranslucent}
