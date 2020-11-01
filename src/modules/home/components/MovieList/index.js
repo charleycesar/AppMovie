@@ -5,11 +5,7 @@ import MovieCard from '@modules/home/components/MovieCard'
 import { FlatList } from 'react-native'
 import { propTypes, defaultProps } from './propTypes'
 
-const MovieList = ({ title, movies, openDetailBottomSheet }) => {
-    const onMoviePress = (movieSelected) => {
-        openDetailBottomSheet(true)
-    }
-
+const MovieList = ({ title, movies, onMoviePress }) => {
     return (
         <Box animation={'slideInRight'} pb={2}>
             <Box pb={1} px={1}>

@@ -10,7 +10,7 @@ import Layout from '@styles/layout'
 import Box from '@UI/Box'
 
 const Home = () => {
-    const [openDetail, setOpenDetail] = React.useState(true)
+    const [openDetail, setOpenDetail] = React.useState(false)
     const { getMovies, popularMovies, topRatedMovies } = useMovies()
     const options = [{ label: 'Filmes' }, { label: 'TV Shows' }]
 
@@ -19,6 +19,10 @@ const Home = () => {
         getMovies('TOP_RATED')
     }, [])
 
+    const onMoviePress = (movieSelected) => {
+        setOpenDetail(true)
+    }
+
     return (
         <Screen fullScreen>
             <HeaderNavigation options={options} />
@@ -26,12 +30,12 @@ const Home = () => {
                 <MovieList
                     title={popularMovies.title}
                     movies={popularMovies.results}
-                    openDetailBottomSheet={(status) => setOpenDetail(status)}
+                    onMoviePress={onMoviePress}
                 />
                 <MovieList
                     title={topRatedMovies.title}
                     movies={topRatedMovies.results}
-                    openDetailBottomSheet={(status) => setOpenDetail(status)}
+                    onMoviePress={onMoviePress}
                 />
             </ScrollView>
             {openDetail && (
