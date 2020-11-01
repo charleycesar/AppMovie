@@ -5,6 +5,7 @@ export const propTypes = {
     width: PropTypes.number,
     height: PropTypes.number,
     borderRadius: PropTypes.number,
+    usePrefixUri: PropTypes.bool,
 }
 
 export const defaultProps = {
@@ -13,4 +14,5 @@ export const defaultProps = {
     height: 150,
     borderRadius: 8,
     noBorderRadius: false,
+    usePrefix: true,
 }
