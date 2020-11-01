@@ -5,31 +5,15 @@ import Screen from '@UI/Screen'
 import HeaderNavigation from '@modules/home/components/HeaderNavigation'
 import MovieCard from '@modules/home/components/MovieCard'
 import { FlatList } from 'react-native'
-import { useDispatch, useSelector } from 'react-redux'
-import FetchList from '@/store/Movie/FetchList'
+import useMovies from '@modules/home/hooks/useMovies'
 
 const Home = () => {
+    const { getMovies, movies } = useMovies()
     const options = [{ label: 'Filmes' }, { label: 'Séries' }]
-    const dispatch = useDispatch()
-    const [movies, setMovies] = React.useState({
-        results: [],
-        title: '',
-    })
 
     React.useEffect(() => {
-        dispatch(FetchList.action(1))
+        getMovies()
     }, [])
-
-    const moviesFromApi = useSelector((state) => state.movies.item)
-
-    React.useEffect(() => {
-        if (moviesFromApi.results !== undefined) {
-            setMovies({
-                results: moviesFromApi.results,
-                title: moviesFromApi.name,
-            })
-        }
-    }, [moviesFromApi])
 
     return (
         <Screen fullScreen>
