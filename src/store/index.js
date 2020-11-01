@@ -14,9 +14,11 @@ import { configureStore } from '@reduxjs/toolkit'
 import createDebugger from 'redux-flipper'
 
 import startup from './Startup'
+import movies from './Movie'
 
 const reducers = combineReducers({
     startup,
+    movies,
 })
 
 const persistConfig = {

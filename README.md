@@ -33,7 +33,7 @@ yarn ios
 yarn test
 ```
 
-## Possible Problems
+## Troubleshooting
 
 If react-native link duplicate resource just run this follow command
 
