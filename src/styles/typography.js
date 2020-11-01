@@ -2,11 +2,11 @@ import palette from './palette'
 
 export const font = {
     family: {
-        main: 'Arial',
-        bold: 'Arial',
-        medium: 'Arial',
-        regular: 'Arial',
-        light: 'Arial',
+        main: 'SourceSansPro-Regular',
+        bold: 'SourceSansPro-Bold',
+        medium: 'SourceSansPro-SemiBold',
+        regular: 'SourceSansPro-Regular',
+        light: 'SourceSansPro-Light',
     },
     weight: {
         bold: 700,
