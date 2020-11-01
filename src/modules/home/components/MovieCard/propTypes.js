@@ -6,6 +6,7 @@ export const propTypes = {
         title: PropTypes.string,
         release_date: PropTypes.string,
     }),
+    onPress: PropTypes.func,
 }
 
 export const defaultProps = {
@@ -14,4 +15,5 @@ export const defaultProps = {
         title: '',
         release_date: '',
     },
+    onPress: () => undefined,
 }

@@ -4,15 +4,19 @@ import React from 'react'
 import Thumbnail from '@UI/Thumbnail'
 import Text from '@UI/Text'
 import moment from 'moment'
+import { TouchableOpacity } from 'react-native'
+
 moment.locale('pt')
 
-const MovieCard = ({ data }) => {
+const MovieCard = ({ data, onPress }) => {
     const { uri, title, release_date } = data
 
     return (
-        <Box fullWidth={false} width={100}>
-            <Thumbnail uri={uri} />
-        </Box>
+        <TouchableOpacity onPress={onPress}>
+            <Box fullWidth={false} width={100}>
+                <Thumbnail uri={uri} />
+            </Box>
+        </TouchableOpacity>
     )
 }
 
