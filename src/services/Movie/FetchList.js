@@ -1,9 +1,6 @@
-import api, { handleError } from '@/services'
+import api from '@/services'
 
-export default async (ListId) => {
-    if (!ListId) {
-        return handleError({ message: 'ListId is required' })
-    }
-    const response = await api.get(`list/${ListId}`)
+export default async () => {
+    const response = await api.get(`movie/popular`)
     return response.data
 }
