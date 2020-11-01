@@ -3,6 +3,7 @@ import Box from '@UI/Box'
 import Text from '@UI/Text'
 import MovieCard from '@modules/home/components/MovieCard'
 import { FlatList } from 'react-native'
+import { propTypes, defaultProps } from './propTypes'
 
 const MovieList = ({ title, movies }) => (
     <Box animation={'slideInRight'}>
@@ -33,4 +34,12 @@ const MovieList = ({ title, movies }) => (
     </Box>
 )
 
-export default MovieList
+MovieList.propTypes = {
+    ...propTypes,
+}
+
+MovieList.defaultProps = {
+    ...defaultProps,
+}
+
+export default React.memo(MovieList)
