@@ -6,8 +6,8 @@ import { FlatList } from 'react-native'
 import { propTypes, defaultProps } from './propTypes'
 
 const MovieList = ({ title, movies }) => (
-    <Box animation={'slideInRight'}>
-        <Box pb={1}>
+    <Box animation={'slideInRight'} pb={2}>
+        <Box pb={1} px={1}>
             <Text variant="h4">{title}</Text>
         </Box>
         <FlatList
