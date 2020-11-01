@@ -34,7 +34,7 @@ const Home = () => {
     return (
         <Screen fullScreen>
             <HeaderNavigation options={options} />
-            <Box>
+            <Box animation={'slideInRight'}>
                 <Box pb={1}>
                     <Text variant="h4">{movies.title}</Text>
                 </Box>
