@@ -38,6 +38,7 @@
     "react": "16.13.1",
     "react-native": "0.63.3",
     "react-native-animatable": "^1.3.3",
+    "react-native-fast-image": "^8.3.2",
     "react-native-flipper": "^0.64.0",
     "react-native-gesture-handler": "^1.8.0",
     "react-native-paper": "^4.3.0",
@@ -73,7 +74,7 @@
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|@react-native-community)"
-		]
+    ]
   },
   "config": {
     "commitizen": {
