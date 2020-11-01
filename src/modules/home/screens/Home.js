@@ -27,10 +27,6 @@ const Home = () => {
                     title={topRatedMovies.title}
                     movies={topRatedMovies.results}
                 />
-                <MovieList
-                    title={topRatedMovies.title}
-                    movies={topRatedMovies.results}
-                />
             </ScrollView>
         </Screen>
     )
