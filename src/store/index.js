@@ -24,7 +24,7 @@ const reducers = combineReducers({
 const persistConfig = {
     key: 'root',
     storage: AsyncStorage,
-    whitelist: [],
+    whitelist: ['movies'],
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)

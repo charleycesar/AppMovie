@@ -8,7 +8,7 @@ const Startup = () => {
     React.useEffect(() => {
         setTimeout(() => {
             replace('home')
-        }, 3000)
+        }, 1000)
     }, [])
 
     return <AppMovieSplash />
