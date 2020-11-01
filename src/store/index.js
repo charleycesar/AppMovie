@@ -14,17 +14,19 @@ import { configureStore } from '@reduxjs/toolkit'
 import createDebugger from 'redux-flipper'
 
 import startup from './Startup'
-import movies from './Movie'
+import popularMovies from './PopularMovies'
+import topRatedMovies from './TopRatedMovies'
 
 const reducers = combineReducers({
     startup,
-    movies,
+    popularMovies,
+    topRatedMovies,
 })
 
 const persistConfig = {
     key: 'root',
     storage: AsyncStorage,
-    whitelist: ['movies'],
+    whitelist: [],
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers)
