@@ -5,8 +5,8 @@ import HeaderNavigationItem from '@modules/home/components/HeaderNavigationItem'
 
 const HeaderNavigation = ({ options }) => (
     <Box direction="row" py={3}>
-        {options.map((option) => (
-            <HeaderNavigationItem label={option.label} />
+        {options.map((option, index) => (
+            <HeaderNavigationItem key={index.toString()} label={option.label} />
         ))}
     </Box>
 )
