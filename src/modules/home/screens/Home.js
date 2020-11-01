@@ -5,17 +5,25 @@ import useMovies from '@modules/home/hooks/useMovies'
 import MovieList from '@modules/home/components/MovieList'
 
 const Home = () => {
-    const { getMovies, movies } = useMovies()
+    const { getMovies, popularMovies, topRatedMovies } = useMovies()
     const options = [{ label: 'Filmes' }, { label: 'Séries' }]
 
     React.useEffect(() => {
-        getMovies()
+        getMovies('POPULAR')
+        getMovies('TOP_RATED')
     }, [])
 
     return (
         <Screen fullScreen>
             <HeaderNavigation options={options} />
-            <MovieList title={movies.title} movies={movies.results} />
+            <MovieList
+                title={popularMovies.title}
+                movies={popularMovies.results}
+            />
+            <MovieList
+                title={topRatedMovies.title}
+                movies={topRatedMovies.results}
+            />
         </Screen>
     )
 }

@@ -4,7 +4,7 @@ import React from 'react'
 import Thumbnail from '@UI/Thumbnail'
 import Text from '@UI/Text'
 import moment from 'moment'
-moment.locale('pt') // 'en'
+moment.locale('pt')
 
 const MovieCard = ({ data }) => {
     const { uri, title, release_date } = data

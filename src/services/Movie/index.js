@@ -1,2 +1,2 @@
-export { default as fetchOneMovieService } from './FetchOne'
 export { default as fetchListMovieService } from './FetchList'
+export { default as fetchTopRatedListMovieService } from './FetchTopRatedList'
