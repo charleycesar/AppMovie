@@ -26,6 +26,7 @@ const Home = () => {
                         <Box fullWidth={false} width={20} />
                     )}
                     horizontal
+                    keyExtractor={(item, index) => index.toString()}
                     renderItem={({ item }) => (
                         <MovieCard data={item} key={item.title} />
                     )}
