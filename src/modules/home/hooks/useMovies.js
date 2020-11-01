@@ -1,34 +1,56 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import FetchList from '@/store/Movie/FetchList'
-import useConnection from '@modules/connection/hooks/useConnection'
+import { useSelector } from 'react-redux'
+import FetchList from '@/store/PopularMovies/FetchList'
+import FetchTopRatedList from '@/store/TopRatedMovies/FetchList'
 import useCache from '@modules/cache/hooks/useCache'
 
 const useMovies = () => {
-    const dispatch = useDispatch()
     const { getRequest } = useCache()
 
-    const [movies, setMovies] = React.useState({
+    const [popularMovies, setPopularMovies] = React.useState({
         results: [],
         title: '',
     })
 
-    const getMovies = () => {
-        getRequest(FetchList, 1)
+    const [topRatedMovies, setTopRatedMovies] = React.useState({
+        results: [],
+        title: '',
+    })
+
+    const getMovies = (category) => {
+        if (category === 'POPULAR') {
+            getRequest(FetchList)
+        }
+
+        if (category === 'TOP_RATED') {
+            getRequest(FetchTopRatedList)
+        }
     }
 
-    const moviesFromApi = useSelector((state) => state.movies.item)
+    const popularFromApi = useSelector((state) => state.popularMovies.item)
+    const topRatedMoviesFromApi = useSelector(
+        (state) => state.topRatedMovies.item,
+    )
 
     React.useEffect(() => {
-        if (moviesFromApi.results !== undefined) {
-            setMovies({
-                results: moviesFromApi.results,
-                title: moviesFromApi.name,
+        if (popularFromApi.results !== undefined) {
+            setPopularMovies({
+                results: popularFromApi.results,
+                title: 'Popular',
             })
         }
-    }, [moviesFromApi])
+    }, [popularFromApi])
 
-    return { getMovies, movies }
+    React.useEffect(() => {
+        if (popularFromApi.results !== undefined) {
+            setTopRatedMovies({
+                results: topRatedMoviesFromApi.results,
+                title: 'Melhores avaliados',
+            })
+        }
+    }, [topRatedMoviesFromApi])
+
+    return { getMovies, popularMovies, topRatedMovies }
 }
 
 export default useMovies
