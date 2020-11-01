@@ -6,6 +6,7 @@ const instance = axios.create({
     headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${Config.TOKEN_TMDB}`,
     },
     timeout: 3000,
 })
