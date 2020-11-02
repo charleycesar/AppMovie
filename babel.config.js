@@ -13,6 +13,7 @@ plugins.push([
             '@router': './src/router',
             '@UI': './src/components/UI',
             '@helpers': './src/helpers',
+            '@schemas': './src/schemas',
         },
     },
 ])

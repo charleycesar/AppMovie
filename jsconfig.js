@@ -6,5 +6,6 @@ System.config({
         '@modules/*': './src/modules/*',
         '@UI/*': './src/components/UI/*',
         '@helpers/*': './src/helpers/*',
+        '@schemas/*': './src/schemas/*',
     },
 })
