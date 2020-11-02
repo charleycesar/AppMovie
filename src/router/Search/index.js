@@ -10,7 +10,7 @@ import routes from './routes'
 
 const Stack = createStackNavigator()
 
-const StartupNavigator = () => {
+const SearchNavigator = () => {
     const theme = useTheme()
     return (
         <Stack.Navigator
@@ -44,4 +44,4 @@ const StartupNavigator = () => {
     )
 }
 
-export default StartupNavigator
+export default SearchNavigator

@@ -5,6 +5,7 @@ import { useTheme } from '@styles/hooks'
 
 import Home from './Home'
 import Startup from './Startup'
+import Search from './Search'
 
 const Main = createStackNavigator()
 
@@ -18,6 +19,7 @@ const Navigator = () => {
                     headerShown: false,
                 }}>
                 <Main.Screen name="startup" component={Startup} />
+                <Main.Screen name="search" component={Search} />
                 <Main.Screen name="home" component={Home} />
             </Main.Navigator>
         </NavigationContainer>
