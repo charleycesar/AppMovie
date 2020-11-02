@@ -5,6 +5,11 @@ import FetchList from '@/store/PopularMovies/FetchList'
 import FetchTopRatedList from '@/store/TopRatedMovies/FetchList'
 import useCache from '@modules/cache/hooks/useCache'
 
+const CATEGORY = {
+    POPULAR: 'POPULAR',
+    TOP_RATED: 'TOP_RATED',
+}
+
 const useMovies = () => {
     const { getRequest } = useCache()
 
@@ -21,11 +26,11 @@ const useMovies = () => {
     const [movieDetails, setMovieDetails] = React.useState({})
 
     const getMovies = (category) => {
-        if (category === 'POPULAR') {
+        if (category === CATEGORY.POPULAR) {
             getRequest(FetchList)
         }
 
-        if (category === 'TOP_RATED') {
+        if (category === CATEGORY.TOP_RATED) {
             getRequest(FetchTopRatedList)
         }
     }
@@ -34,7 +39,7 @@ const useMovies = () => {
         getRequest(FetchOne, movieId)
     }
 
-    const movieDetailsFromApi = useSelector((state) => state.movie.item)
+    const movieDetailsFromApi = useSelector((state) => state.movie)
     const popularFromApi = useSelector((state) => state.popularMovies.item)
     const topRatedMoviesFromApi = useSelector(
         (state) => state.topRatedMovies.item,
@@ -59,8 +64,9 @@ const useMovies = () => {
     }, [topRatedMoviesFromApi])
 
     React.useEffect(() => {
-        if (movieDetailsFromApi.id !== undefined) {
-            setMovieDetails(movieDetailsFromApi)
+        console.log(movieDetailsFromApi)
+        if (movieDetailsFromApi.item !== undefined) {
+            setMovieDetails(movieDetailsFromApi.item)
         }
     }, [movieDetailsFromApi])
 
@@ -70,6 +76,7 @@ const useMovies = () => {
         movieDetails,
         popularMovies,
         topRatedMovies,
+        movieDetailsFromApi,
     }
 }
 

@@ -7,6 +7,7 @@ import MovieList from '@modules/home/components/MovieList'
 import DetailsMovie from '@modules/home/components/DetailsMovie'
 import { ScrollView } from 'react-native'
 import Layout from '@styles/layout'
+import LoadingMovieDetails from '@modules/home/components/LoadingMovieDetails'
 
 const Home = () => {
     const [openDetail, setOpenDetail] = React.useState(false)
@@ -16,6 +17,7 @@ const Home = () => {
         movieDetails,
         popularMovies,
         topRatedMovies,
+        movieDetailsFromApi,
     } = useMovies()
     const options = [{ label: 'Filmes' }, { label: 'TV Shows' }]
 
@@ -44,14 +46,19 @@ const Home = () => {
                     onMoviePress={onMoviePress}
                 />
             </ScrollView>
-            {openDetail && movieDetails && (
+
+            {openDetail && movieDetails.id && (
                 <BottomSheet
                     show={openDetail}
                     showDrag
                     size={'medium'}
                     showBackDrop
                     onClose={() => setOpenDetail(false)}>
-                    <DetailsMovie movie={movieDetails} />
+                    {movieDetailsFromApi?.fetchOne?.loading ? (
+                        <LoadingMovieDetails />
+                    ) : (
+                        <DetailsMovie movie={movieDetails} />
+                    )}
                 </BottomSheet>
             )}
         </Screen>
