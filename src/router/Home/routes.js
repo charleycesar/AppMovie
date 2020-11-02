@@ -4,6 +4,7 @@ import ThreeDotsOutlineIcon from '@UI/Icon/ThreeDotsOutlineIcon'
 import Text from '@UI/Text'
 import config from '@modules/home/config'
 import Home from '@modules/home/screens/Home'
+import Search from '@modules/search/screens/Search'
 import React from 'react'
 
 const Label = ({ label, hasFocus }) => (
@@ -29,8 +30,8 @@ export default [
     },
     {
         name: 'Search',
-        component: Home,
-        path: `${config.frontEndUrl}/search`,
+        component: Search,
+        path: `${config.frontEndUrl}/index`,
         options: {
             header: () => null,
             tabBarLabel: ({ focused }) => (
