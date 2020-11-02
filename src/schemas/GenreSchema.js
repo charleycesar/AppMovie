@@ -1,9 +1,12 @@
-export default class GenreSchema {
+import Realm from 'realm'
+
+export default class GenreSchema extends Realm.Object {
     static schema = {
         name: 'Genre',
-        primaryKey: 'id',
+        primaryKey: 'uuid',
         properties: {
-            id: { type: 'int', indexed: true },
+            uuid: { type: 'string' },
+            id: 'int',
             name: 'string',
             type_search: 'string',
         },

@@ -7,5 +7,6 @@ System.config({
         '@UI/*': './src/components/UI/*',
         '@helpers/*': './src/helpers/*',
         '@schemas/*': './src/schemas/*',
+        '@services/*': './src/services/*',
     },
 })
