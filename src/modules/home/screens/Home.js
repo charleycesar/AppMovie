@@ -1,15 +1,12 @@
 import React from 'react'
 import Screen from '@UI/Screen'
-import Text from '@UI/Text'
 import BottomSheet from '@UI/BottomSheet'
 import HeaderNavigation from '@modules/home/components/HeaderNavigation'
 import useMovies from '@modules/home/hooks/useMovies'
 import MovieList from '@modules/home/components/MovieList'
+import DetailsMovie from '@modules/home/components/DetailsMovie'
 import { ScrollView } from 'react-native'
 import Layout from '@styles/layout'
-import Box from '@UI/Box'
-import moment from 'moment'
-import Thumbnail from '@UI/Thumbnail'
 
 const Home = () => {
     const [openDetail, setOpenDetail] = React.useState(false)
@@ -47,31 +44,14 @@ const Home = () => {
                     onMoviePress={onMoviePress}
                 />
             </ScrollView>
-            {openDetail && (
+            {openDetail && movieDetails && (
                 <BottomSheet
                     show={openDetail}
                     showDrag
                     size={'medium'}
                     showBackDrop
                     onClose={() => setOpenDetail(false)}>
-                    <Box p={1}>
-                        <Box direction={'row'} pb={2}>
-                            <Thumbnail
-                                uri={`/w200${movieDetails.poster_path}`}
-                            />
-                            <Box px={2}>
-                                <Text variant={'h4'}>{movieDetails.title}</Text>
-                                <Text variant={'h5'}>
-                                    {moment(movieDetails.release_date).format(
-                                        'Y',
-                                    )}
-                                </Text>
-                                <Text>Classificação:</Text>
-                                <Text>Avaliação:</Text>
-                            </Box>
-                        </Box>
-                        <Text variant={'body2'}>{movieDetails.overview}</Text>
-                    </Box>
+                    <DetailsMovie movie={movieDetails} />
                 </BottomSheet>
             )}
         </Screen>
