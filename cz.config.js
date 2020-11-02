@@ -1,6 +1,7 @@
 module.exports = {
     types: [
         { value: 'feat', name: 'feat:     A new feature' },
+        { value: 'lib', name: 'lib:     A new lib' },
         { value: 'fix', name: 'fix:      A bug fix' },
         { value: 'docs', name: 'docs:     Documentation only changes' },
         {
