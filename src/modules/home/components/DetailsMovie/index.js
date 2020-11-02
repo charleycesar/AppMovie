@@ -13,7 +13,7 @@ const DetailsMovie = ({ movie }) => {
 
     return (
         <Box p={1}>
-            <Box direction={'row'} pb={2}>
+            <Box direction={'row'} py={0.5}>
                 <Thumbnail uri={`/w200${movie.poster_path}`} />
                 <Box px={1}>
                     <Text variant={'h6'} color={'white'} numberOfLines={2}>

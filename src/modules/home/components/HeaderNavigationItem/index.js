@@ -5,7 +5,9 @@ import Text from '@UI/Text'
 
 const HeaderNavigationItem = ({ label }) => (
     <Box display={'flex'} alignItems="center">
-        <Text>{label}</Text>
+        <Text color="white" weight={'medium'}>
+            {label}
+        </Text>
     </Box>
 )
 
