@@ -66,6 +66,9 @@ PODS:
     - boost-for-react-native
     - DoubleConversion
     - glog
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
   - glog (0.3.5)
   - libwebp (1.1.0):
     - libwebp/demux (= 1.1.0)
@@ -315,6 +318,9 @@ PODS:
     - React-Core (= 0.63.3)
     - React-cxxreact (= 0.63.3)
     - React-jsi (= 0.63.3)
+  - RealmJS (10.0.1):
+    - GCDWebServer
+    - React
   - RNCAsyncStorage (1.12.1):
     - React-Core
   - RNCMaskedView (0.1.10):
@@ -394,6 +400,7 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RealmJS (from `../node_modules/realm`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNFastImage (from `../node_modules/react-native-fast-image`)
@@ -416,6 +423,7 @@ SPEC REPOS:
     - Flipper-PeerTalk
     - Flipper-RSocket
     - FlipperKit
+    - GCDWebServer
     - libwebp
     - lottie-ios
     - OpenSSL-Universal
@@ -482,6 +490,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RealmJS:
+    :path: "../node_modules/realm"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-community/async-storage"
   RNCMaskedView:
@@ -516,6 +526,7 @@ SPEC CHECKSUMS:
   Flipper-RSocket: 64e7431a55835eb953b0bf984ef3b90ae9fdddd7
   FlipperKit: ab353d41aea8aae2ea6daaf813e67496642f3d7d
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
   libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
@@ -544,6 +555,7 @@ SPEC CHECKSUMS:
   React-RCTText: 65a6de06a7389098ce24340d1d3556015c38f746
   React-RCTVibration: 8e9fb25724a0805107fc1acc9075e26f814df454
   ReactCommon: 4167844018c9ed375cc01a843e9ee564399e53c3
+  RealmJS: 5c2e37124c889c405c92b76f0d83bce07ca228f8
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNFastImage: e19ba191922e7dab9d932a4d59d62d76660aa222

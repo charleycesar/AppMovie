@@ -64,7 +64,6 @@ const useMovies = () => {
     }, [topRatedMoviesFromApi])
 
     React.useEffect(() => {
-        console.log(movieDetailsFromApi)
         if (movieDetailsFromApi.item !== undefined) {
             setMovieDetails(movieDetailsFromApi.item)
         }
