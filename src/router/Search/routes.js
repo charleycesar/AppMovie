@@ -1,5 +1,6 @@
 import config from '@modules/search/config'
 import Search from '@modules/search/screens/Search'
+import Genre from '@modules/search/screens/Genre'
 
 export default [
     {
@@ -11,16 +12,16 @@ export default [
         },
     },
     {
-        name: 'Movie',
-        component: Search,
-        path: `${config.frontEndUrl}/movie`,
+        name: 'Genre',
+        component: Genre,
+        path: `${config.frontEndUrl}/genre`,
         options: {
             header: () => null,
         },
     },
     {
         name: 'Tv',
-        component: Search,
+        component: Genre,
         path: `${config.frontEndUrl}/tv`,
         options: {
             header: () => null,

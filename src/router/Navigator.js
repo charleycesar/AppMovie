@@ -18,9 +18,9 @@ const Navigator = () => {
                 screenOptions={{
                     headerShown: false,
                 }}>
+                <Main.Screen name="home" component={Home} />
                 <Main.Screen name="startup" component={Startup} />
                 <Main.Screen name="search" component={Search} />
-                <Main.Screen name="home" component={Home} />
             </Main.Navigator>
         </NavigationContainer>
     )

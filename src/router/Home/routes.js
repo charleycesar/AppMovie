@@ -3,8 +3,9 @@ import LoopIcon from '@UI/Icon/LoopIcon'
 import ThreeDotsOutlineIcon from '@UI/Icon/ThreeDotsOutlineIcon'
 import Text from '@UI/Text'
 import config from '@modules/home/config'
+import configSearch from '@modules/search/config'
 import Home from '@modules/home/screens/Home'
-import Search from '@modules/search/screens/Search'
+import Search from '@router/Search'
 import React from 'react'
 
 const Label = ({ label, hasFocus }) => (
@@ -15,7 +16,7 @@ const Label = ({ label, hasFocus }) => (
 
 export default [
     {
-        name: 'Home',
+        name: 'home',
         component: Home,
         path: `${config.frontEndUrl}/main`,
         options: {
@@ -29,9 +30,9 @@ export default [
         },
     },
     {
-        name: 'Search',
+        name: 'search',
         component: Search,
-        path: `${config.frontEndUrl}/index`,
+        path: `${configSearch.frontEndUrl}`,
         options: {
             header: () => null,
             tabBarLabel: ({ focused }) => (
@@ -39,20 +40,6 @@ export default [
             ),
             tabBarIcon: ({ focused }) => (
                 <LoopIcon color={focused ? 'secondary' : 'primary'} />
-            ),
-        },
-    },
-    {
-        name: 'Downloads',
-        component: Home,
-        path: `${config.frontEndUrl}/downloads`,
-        options: {
-            header: () => null,
-            tabBarLabel: ({ focused }) => (
-                <Label hasFocus={focused} label="downloads" />
-            ),
-            tabBarIcon: ({ focused }) => (
-                <HomeIcon color={focused ? 'secondary' : 'primary'} />
             ),
         },
     },
