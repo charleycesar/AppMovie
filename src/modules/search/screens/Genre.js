@@ -5,7 +5,7 @@ import Text from '@UI/Text'
 import useGenres from '@modules/search/hooks/useGenres'
 import GenreList from '@modules/search/components/GenreList'
 import Box from '@UI/Box'
-import { TouchableOpacity, Keyboard, TextInput } from 'react-native'
+import { TouchableOpacity, Keyboard } from 'react-native'
 import BackButton from '@modules/navigation/BackButton'
 import SearchBar from '@modules/search/components/SearchBar'
 
