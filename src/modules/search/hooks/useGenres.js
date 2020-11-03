@@ -25,7 +25,8 @@ const useGenres = () => {
     const populateRealm = async () => {
         try {
             const realm = await getRealm()
-            const genres = realm.objects('Genre')
+            const genres = realm.objects('Genre').toJSON()
+
             if (genres.length) {
                 return genres
             }
