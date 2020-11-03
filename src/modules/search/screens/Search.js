@@ -17,10 +17,8 @@ const Search = () => {
                         uri:
                             'https://image.tmdb.org/t/p/w440_and_h660_face/ucMdbTpOhV75R0NtxqHEg4hirNl.jpg',
                         onPress: () =>
-                            navigate(configSearch.frontEndUrl, {
-                                screen: `${configSearch.frontEndUrl}/genre`,
-                                initial: false,
-                                params: { typeSearch: 'movie' },
+                            navigate(`${configSearch.frontEndUrl}/genre`, {
+                                typeSearch: 'movie',
                             }),
                     },
                     {
