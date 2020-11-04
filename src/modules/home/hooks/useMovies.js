@@ -4,6 +4,7 @@ import FetchOne from '@/store/Movie/FetchOne'
 import FetchList from '@/store/PopularMovies/FetchList'
 import FetchTopRatedList from '@/store/TopRatedMovies/FetchList'
 import useCache from '@modules/cache/hooks/useCache'
+import DiscoverFetchList from '@/services/Discover/FetchList'
 
 const CATEGORY = {
     POPULAR: 'POPULAR',
@@ -69,6 +70,23 @@ const useMovies = () => {
         }
     }, [movieDetailsFromApi])
 
+    const getRequestParams = (data) => {
+        let params = {}
+        if (data.withGenre) {
+            params['with_genres'] = data.withGenre
+        }
+
+        if (data.page) {
+            params['page'] = data.page
+        }
+
+        return params
+    }
+    const searchMovies = (typeOfSearch, data) => {
+        const params = getRequestParams(data)
+        return DiscoverFetchList(typeOfSearch, params)
+    }
+
     return {
         getMovies,
         getDetails,
@@ -76,6 +94,7 @@ const useMovies = () => {
         popularMovies,
         topRatedMovies,
         movieDetailsFromApi,
+        searchMovies,
     }
 }
 
