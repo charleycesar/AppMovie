@@ -1,19 +1,17 @@
 import React from 'react'
 import Screen from '@UI/Screen'
 import { useRoute, useNavigation } from '@modules/navigation/hooks'
-import Text from '@UI/Text'
 import useGenres from '@modules/search/hooks/useGenres'
 import MenuList from '@modules/search/components/MenuList'
 import Box from '@UI/Box'
 import { Alert, TouchableOpacity, FlatList } from 'react-native'
-import BackButton from '@modules/navigation/BackButton'
 import useMovies from '@modules/home/hooks/useMovies'
 import Thumbnail from '@UI/Thumbnail'
 import { getScreenDimensions } from '@helpers/screen'
 import DetailsMovie from '@modules/home/components/DetailsMovie'
 import BottomSheet from '@UI/BottomSheet'
 import { LABELS, optionsChoose } from '@modules/search/helpers'
-import ArrowDownIcon from '@UI/Icon/ArrowDownIcon'
+import Breadcrumb from '@modules/search/components/Breadcrumb'
 
 const Genre = () => {
     const { params } = useRoute()
@@ -119,99 +117,53 @@ const Genre = () => {
     return (
         <Screen fullscreen>
             <Box>
-                {genre.id ? (
-                    <>
-                        <Box
-                            alignItems={'center'}
-                            animation={'fadeInDown'}
-                            direction={'row'}
-                            alignItems={'center'}>
-                            <BackButton
-                                htmlColor={'white'}
-                                onPress={() => goBack()}
-                            />
-                            <TouchableOpacity onPress={() => setChoose({})}>
-                                <Box
-                                    fullWidth={false}
-                                    height={40}
-                                    alignItems={'center'}
-                                    direction={'row'}
-                                    pr={2}>
-                                    <Text
-                                        variant="h4"
-                                        color="white"
-                                        fullWidth={false}>
-                                        {LABELS[choose.value].name}
-                                    </Text>
-                                    <ArrowDownIcon color={'white'} />
-                                </Box>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={() => setGenre({})}>
-                                <Box
-                                    fullWidth={false}
-                                    height={40}
-                                    alignItems={'center'}
-                                    direction={'row'}>
-                                    <Text
-                                        variant="h5"
-                                        color="white"
-                                        fullWidth={false}>
-                                        {genre.name}
-                                    </Text>
-                                    <ArrowDownIcon color={'white'} />
-                                </Box>
-                            </TouchableOpacity>
-                        </Box>
-                    </>
-                ) : (
-                    <MenuList
-                        onPress={onPressGenre}
-                        data={genres}
-                        title={'Todos os gêneros'}
-                    />
-                )}
+                <Breadcrumb
+                    choose={choose}
+                    genre={genre}
+                    onPressGoBack={() => goBack()}
+                    onPressChoose={() => setChoose({})}
+                    onPressGenre={() => setGenre({})}
+                />
 
-                <Box>
-                    <FlatList
-                        data={responseMovies}
-                        numColumns={2}
-                        keyExtractor={(item, index) => index.toString()}
-                        renderItem={({ item }) => {
-                            if (item.poster_path) {
-                                return (
-                                    <Box
-                                        fullWidth={false}
-                                        width={'50%'}
-                                        py={2}
-                                        alignItems={'center'}>
-                                        <TouchableOpacity
-                                            onPress={() => {
-                                                setOpenDetail(true)
-                                                setMovieDetails(item)
-                                            }}>
-                                            <Thumbnail
-                                                width={
-                                                    getScreenDimensions()
-                                                        .width / 2
-                                                }
-                                                height={200}
-                                                uri={`/w154/${item.poster_path}`}
-                                            />
-                                        </TouchableOpacity>
-                                    </Box>
-                                )
-                            }
-                            return null
-                        }}
-                        onEndReachedThreshold={0.5}
-                        onEndReached={() => {
-                            {
-                                !loading && discoverMovies()
-                            }
-                        }}
-                        scrollEventThrottle={400}
-                    />
-                </Box>
+                <FlatList
+                    data={responseMovies}
+                    numColumns={2}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({ item }) => {
+                        if (item.poster_path) {
+                            return (
+                                <Box
+                                    fullWidth={false}
+                                    width={'50%'}
+                                    py={2}
+                                    alignItems={'center'}>
+                                    <TouchableOpacity
+                                        onPress={() => {
+                                            setOpenDetail(true)
+                                            setMovieDetails(item)
+                                        }}>
+                                        <Thumbnail
+                                            width={
+                                                getScreenDimensions().width / 2
+                                            }
+                                            height={200}
+                                            uri={`/w154/${item.poster_path}`}
+                                        />
+                                    </TouchableOpacity>
+                                </Box>
+                            )
+                        }
+                        return null
+                    }}
+                    onEndReachedThreshold={0.5}
+                    onEndReached={() => {
+                        {
+                            !loading && discoverMovies()
+                        }
+                    }}
+                    scrollEventThrottle={400}
+                />
+
                 {openDetail && movieDetails.id && (
                     <BottomSheet
                         show={openDetail}
