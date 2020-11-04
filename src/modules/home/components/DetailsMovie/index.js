@@ -8,13 +8,13 @@ import { Rating } from 'react-native-ratings'
 import { convertTime } from '@helpers/time'
 import { useTheme } from '@styles/hooks'
 
-const DetailsMovie = ({ movie }) => {
+const DetailsMovie = ({ movie, size }) => {
     const theme = useTheme()
 
     return (
-        <Box p={1}>
+        <Box p={1} animation={'fadeIn'}>
             <Box direction={'row'} py={0.5}>
-                <Thumbnail uri={`/w200${movie.poster_path}`} />
+                <Thumbnail uri={`/${size}${movie.poster_path}`} />
                 <Box px={1}>
                     <Text variant={'h6'} color={'white'} numberOfLines={2}>
                         {movie.title}
@@ -76,7 +76,7 @@ const DetailsMovie = ({ movie }) => {
                 </Box>
             </Box>
             <Text variant={'body2'} color="textPrimary" weight={'medium'}>
-                {movie.overview}
+                {movie.overview || 'Sem informações'}
             </Text>
         </Box>
     )

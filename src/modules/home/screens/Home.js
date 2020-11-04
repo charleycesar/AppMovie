@@ -8,8 +8,11 @@ import DetailsMovie from '@modules/home/components/DetailsMovie'
 import { ScrollView } from 'react-native'
 import Layout from '@styles/layout'
 import LoadingMovieDetails from '@modules/home/components/LoadingMovieDetails'
+import { useNavigation } from '@modules/navigation/hooks'
+import configSearch from '@modules/search/config'
 
 const Home = () => {
+    const { navigate } = useNavigation()
     const [openDetail, setOpenDetail] = React.useState(false)
     const {
         getMovies,
@@ -19,7 +22,30 @@ const Home = () => {
         topRatedMovies,
         movieDetailsFromApi,
     } = useMovies()
-    const options = [{ label: 'Filmes' }, { label: 'TV Shows' }]
+    const options = [
+        {
+            label: 'Filmes',
+            onPress: () =>
+                navigate(`${configSearch.frontEndUrl}`, {
+                    screen: `${configSearch.frontEndUrl}/genre`,
+                    initial: false,
+                    params: {
+                        typeSearch: 'movie',
+                    },
+                }),
+        },
+        {
+            label: 'TV Shows',
+            onPress: () =>
+                navigate(`${configSearch.frontEndUrl}`, {
+                    screen: `${configSearch.frontEndUrl}/genre`,
+                    initial: false,
+                    params: {
+                        typeSearch: 'tv',
+                    },
+                }),
+        },
+    ]
 
     React.useEffect(() => {
         getMovies('POPULAR')

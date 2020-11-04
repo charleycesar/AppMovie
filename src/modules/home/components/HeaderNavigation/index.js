@@ -6,7 +6,11 @@ import HeaderNavigationItem from '@modules/home/components/HeaderNavigationItem'
 const HeaderNavigation = ({ options }) => (
     <Box direction="row" py={3} animation={'slideInDown'}>
         {options.map((option, index) => (
-            <HeaderNavigationItem key={index.toString()} label={option.label} />
+            <HeaderNavigationItem
+                key={index.toString()}
+                label={option.label}
+                onPress={option.onPress}
+            />
         ))}
     </Box>
 )

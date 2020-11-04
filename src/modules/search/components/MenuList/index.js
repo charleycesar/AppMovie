@@ -16,6 +16,7 @@ const MenuList = ({ onPress, data, title }) => {
                     {title}
                 </Text>
             </Box>
+
             <FlatList
                 data={data}
                 style={{
