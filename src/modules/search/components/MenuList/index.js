@@ -4,7 +4,7 @@ import Box from '@UI/Box'
 import { TouchableOpacity, FlatList } from 'react-native'
 import { propTypes, defaultProps } from './propTypes'
 
-const GenreList = ({ onPress, data, title }) => {
+const MenuList = ({ onPress, data, title }) => {
     if (!data) {
         return null
     }
@@ -36,12 +36,12 @@ const GenreList = ({ onPress, data, title }) => {
     )
 }
 
-GenreList.propTypes = {
+MenuList.propTypes = {
     ...propTypes,
 }
 
-GenreList.defaultProps = {
+MenuList.defaultProps = {
     ...defaultProps,
 }
 
-export default React.memo(GenreList)
+export default React.memo(MenuList)
