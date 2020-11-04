@@ -54,7 +54,7 @@ const useGenres = () => {
             const genres = realm
                 .objects('Genre')
                 .filtered(`type_search = '${typeSearch}'`)
-            setGenres(genres)
+            setGenres(Array.from(genres))
         } catch (error) {
             alert(
                 'Houve um erro, ao buscar os dados de genero tente novamente mais tarde.',
