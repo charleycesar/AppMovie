@@ -4,14 +4,13 @@ import { useRoute, useNavigation } from '@modules/navigation/hooks'
 import useGenres from '@modules/search/hooks/useGenres'
 import MenuList from '@modules/search/components/MenuList'
 import Box from '@UI/Box'
-import { Alert, TouchableOpacity, FlatList } from 'react-native'
+import { Alert } from 'react-native'
 import useMovies from '@modules/home/hooks/useMovies'
-import Thumbnail from '@UI/Thumbnail'
-import { getScreenDimensions } from '@helpers/screen'
 import DetailsMovie from '@modules/home/components/DetailsMovie'
 import BottomSheet from '@UI/BottomSheet'
 import { LABELS, optionsChoose } from '@modules/search/helpers'
 import Breadcrumb from '@modules/search/components/Breadcrumb'
+import CatalogList from '@modules/search/components/CatalogList'
 
 const Genre = () => {
     const { params } = useRoute()
@@ -125,43 +124,14 @@ const Genre = () => {
                     onPressGenre={() => setGenre({})}
                 />
 
-                <FlatList
+                <CatalogList
                     data={responseMovies}
-                    numColumns={2}
-                    keyExtractor={(item, index) => index.toString()}
-                    renderItem={({ item }) => {
-                        if (item.poster_path) {
-                            return (
-                                <Box
-                                    fullWidth={false}
-                                    width={'50%'}
-                                    py={2}
-                                    alignItems={'center'}>
-                                    <TouchableOpacity
-                                        onPress={() => {
-                                            setOpenDetail(true)
-                                            setMovieDetails(item)
-                                        }}>
-                                        <Thumbnail
-                                            width={
-                                                getScreenDimensions().width / 2
-                                            }
-                                            height={200}
-                                            uri={`/w154/${item.poster_path}`}
-                                        />
-                                    </TouchableOpacity>
-                                </Box>
-                            )
-                        }
-                        return null
+                    onPressItem={(item) => {
+                        setOpenDetail(true)
+                        setMovieDetails(item)
                     }}
-                    onEndReachedThreshold={0.5}
-                    onEndReached={() => {
-                        {
-                            !loading && discoverMovies()
-                        }
-                    }}
-                    scrollEventThrottle={400}
+                    loading={loading}
+                    discoverMovies={() => discoverMovies()}
                 />
 
                 {openDetail && movieDetails.id && (
