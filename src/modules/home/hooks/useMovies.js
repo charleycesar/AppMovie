@@ -5,6 +5,7 @@ import FetchList from '@/store/PopularMovies/FetchList'
 import FetchTopRatedList from '@/store/TopRatedMovies/FetchList'
 import useCache from '@modules/cache/hooks/useCache'
 import DiscoverFetchList from '@/services/Discover/FetchList'
+import MultiSearchFetchList from '@/services/MultiSearch/FetchList'
 
 const CATEGORY = {
     POPULAR: 'POPULAR',
@@ -72,6 +73,10 @@ const useMovies = () => {
 
     const getRequestParams = (data) => {
         let params = {}
+        if (data.query) {
+            params['query'] = data.query
+        }
+
         if (data.withGenre) {
             params['with_genres'] = data.withGenre
         }
@@ -82,8 +87,11 @@ const useMovies = () => {
 
         return params
     }
-    const searchMovies = (typeOfSearch, data) => {
+    const searchMovies = (typeOfSearch, data, multi = false) => {
         const params = getRequestParams(data)
+        if (multi) {
+            return MultiSearchFetchList(params)
+        }
         return DiscoverFetchList(typeOfSearch, params)
     }
 
