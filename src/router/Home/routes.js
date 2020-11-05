@@ -43,20 +43,4 @@ export default [
             ),
         },
     },
-    {
-        name: 'More',
-        component: Home,
-        path: `${config.frontEndUrl}/more`,
-        options: {
-            header: () => null,
-            tabBarLabel: ({ focused }) => (
-                <Label hasFocus={focused} label="mais" />
-            ),
-            tabBarIcon: ({ focused }) => (
-                <ThreeDotsOutlineIcon
-                    color={focused ? 'secondary' : 'primary'}
-                />
-            ),
-        },
-    },
 ]

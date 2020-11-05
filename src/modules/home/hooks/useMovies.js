@@ -6,6 +6,7 @@ import FetchTopRatedList from '@/store/TopRatedMovies/FetchList'
 import useCache from '@modules/cache/hooks/useCache'
 import DiscoverFetchList from '@/services/Discover/FetchList'
 import MultiSearchFetchList from '@/services/MultiSearch/FetchList'
+import useConnection from '@modules/connection/hooks/useConnection'
 
 const CATEGORY = {
     POPULAR: 'POPULAR',
@@ -14,6 +15,7 @@ const CATEGORY = {
 
 const useMovies = () => {
     const { getRequest } = useCache()
+    const { connected } = useConnection()
 
     const [popularMovies, setPopularMovies] = React.useState({
         results: [],
@@ -89,6 +91,14 @@ const useMovies = () => {
     }
     const searchMovies = (typeOfSearch, data, multi = false) => {
         const params = getRequestParams(data)
+        if (!connected)
+            return Promise.reject({
+                message: 'Network Error',
+                data: {
+                    errors: ['Sem conexão com internet'],
+                },
+                status: false,
+            })
         if (multi) {
             return MultiSearchFetchList(params)
         }
