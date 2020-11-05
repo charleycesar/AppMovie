@@ -11,10 +11,11 @@ import BottomSheet from '@UI/BottomSheet'
 import { LABELS, optionsChoose } from '@modules/search/helpers'
 import Breadcrumb from '@modules/search/components/Breadcrumb'
 import CatalogList from '@modules/search/components/CatalogList'
+import configHome from '@modules/home/config'
 
 const Genre = () => {
     const { params } = useRoute()
-    const { goBack } = useNavigation()
+    const { replace } = useNavigation()
     const { searchMovies } = useMovies()
     const { getGenres, genres } = useGenres()
     const [choose, setChoose] = React.useState({
@@ -119,7 +120,12 @@ const Genre = () => {
                 <Breadcrumb
                     choose={choose}
                     genre={genre}
-                    onPressGoBack={() => goBack()}
+                    onPressGoBack={() =>
+                        replace(`${configHome.frontEndUrl}`, {
+                            screen: `${configHome.frontEndUrl}/main`,
+                            initial: true,
+                        })
+                    }
                     onPressChoose={() => setChoose({})}
                     onPressGenre={() => setGenre({})}
                 />
