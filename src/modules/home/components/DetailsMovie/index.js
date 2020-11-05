@@ -10,7 +10,6 @@ import { useTheme } from '@styles/hooks'
 
 const DetailsMovie = ({ movie, size }) => {
     const theme = useTheme()
-
     return (
         <Box p={1} animation={'fadeIn'}>
             <Box direction={'row'} py={0.5}>
@@ -60,7 +59,11 @@ const DetailsMovie = ({ movie, size }) => {
                                 </Text>
                             </Box>
                         )}
-                        <Text color="white">{convertTime(movie.runtime)}</Text>
+                        {movie.runtime && (
+                            <Text color="white">
+                                {convertTime(movie.runtime)}
+                            </Text>
+                        )}
                     </Box>
                     <Text>Avaliação</Text>
                     {movie.vote_average && (
