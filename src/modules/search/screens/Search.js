@@ -1,37 +1,110 @@
 import React from 'react'
 import Screen from '@UI/Screen'
-import ChooseTypeSearch from '@modules/search/components/ChooseTypeSearch'
-import { useNavigation } from '@modules/navigation/hooks'
-import configSearch from '@modules/search/config'
+import useDebounce from '@modules/search/hooks/useDebounce'
+import SearchBar from '@modules/search/components/SearchBar'
+import useMovies from '@modules/home/hooks/useMovies'
+import CatalogList from '@modules/search/components/CatalogList'
+import { Alert, Keyboard, TouchableWithoutFeedback } from 'react-native'
+import BottomSheet from '@UI/BottomSheet'
+import DetailsMovie from '@modules/home/components/DetailsMovie'
+import EmptyState from '@modules/search/components/EmptyState'
+import Box from '@UI/Box'
+import Loading from '@UI/Loading'
 
 const Search = () => {
-    const { navigate } = useNavigation()
+    const [searching, setSearching] = React.useState(false)
+    const [term, setTerm] = React.useState('')
+    const [emptyMessage, setEmptyMessage] = React.useState({
+        title: 'Realize uma pesquisa',
+        description: 'Aqui serão listados filmes e TV Shows',
+    })
+    const [results, setResults] = React.useState([])
+    const [openDetail, setOpenDetail] = React.useState(false)
+    const [movieDetails, setMovieDetails] = React.useState({})
+
+    const { searchMovies } = useMovies()
+    const debouncedTerm = useDebounce(term, 500)
+
+    React.useEffect(() => {
+        if (debouncedTerm) {
+            setSearching(true)
+            multiSearch()
+        }
+    }, [debouncedTerm])
+
+    const multiSearch = () => {
+        const data = {
+            query: term,
+        }
+        setSearching(true)
+        searchMovies('multi', data, true)
+            .then((response) => {
+                if (!response.data.results.length) {
+                    setEmptyMessage({
+                        title: 'Ops. Não localizamos registros.',
+                        description: 'Tente pesquisasr por outro termo.',
+                    })
+                }
+                setResults(response.data.results)
+                setSearching(false)
+            })
+            .catch((error) => {
+                Alert.alert(error.data?.errors?.join('\n'))
+                setSearching(false)
+            })
+    }
+
+    const RenderContent = () => {
+        if (searching) {
+            return (
+                <Box
+                    fullWidth
+                    height="100%"
+                    alignItems="center"
+                    justifyContent="center">
+                    <Loading />
+                </Box>
+            )
+        }
+
+        if (results.length) {
+            return (
+                <CatalogList
+                    data={results}
+                    onPressItem={(item) => {
+                        setOpenDetail(true)
+                        setMovieDetails(item)
+                    }}
+                    onScroll={() => Keyboard.dismiss()}
+                />
+            )
+        }
+
+        return <EmptyState {...emptyMessage} />
+    }
 
     return (
         <Screen fullScreen>
-            <ChooseTypeSearch
-                title={'Selecione o tipo da busca'}
-                options={[
-                    {
-                        name: 'Filmes',
-                        uri:
-                            'https://image.tmdb.org/t/p/w440_and_h660_face/ucMdbTpOhV75R0NtxqHEg4hirNl.jpg',
-                        onPress: () =>
-                            navigate(`${configSearch.frontEndUrl}/genre`, {
-                                typeSearch: 'movie',
-                            }),
-                    },
-                    {
-                        name: 'TV Shows',
-                        uri:
-                            'https://image.tmdb.org/t/p/w440_and_h660_face/ucMdbTpOhV75R0NtxqHEg4hirNl.jpg',
-                        onPress: () =>
-                            navigate(`${configSearch.frontEndUrl}/genre`, {
-                                typeSearch: 'tv',
-                            }),
-                    },
-                ]}
-            />
+            <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+                <>
+                    <SearchBar
+                        placeholder={`Pesquise...`}
+                        onChangeText={(text) => setTerm(text)}
+                        onBlur={() => Keyboard.dismiss()}
+                    />
+                    <RenderContent />
+                </>
+            </TouchableWithoutFeedback>
+            {openDetail && movieDetails.id && (
+                <BottomSheet
+                    show={openDetail}
+                    showDrag
+                    size={'medium'}
+                    showBackDrop
+                    onClose={() => setOpenDetail(false)}>
+                    <DetailsMovie movie={movieDetails} />
+                </BottomSheet>
+            )}
         </Screen>
     )
 }

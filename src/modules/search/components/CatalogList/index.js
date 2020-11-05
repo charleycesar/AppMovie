@@ -5,7 +5,13 @@ import { propTypes, defaultProps } from './propTypes'
 import React from 'react'
 import { TouchableOpacity, FlatList } from 'react-native'
 
-const CatalogList = ({ data, onPressItem, loading, discoverMovies }) => (
+const CatalogList = ({
+    data,
+    onPressItem,
+    loading,
+    discoverMovies,
+    onScroll,
+}) => (
     <FlatList
         data={data}
         numColumns={2}
@@ -22,7 +28,7 @@ const CatalogList = ({ data, onPressItem, loading, discoverMovies }) => (
                             <Thumbnail
                                 width={getScreenDimensions().width / 2}
                                 height={200}
-                                uri={`/w154/${item.poster_path}`}
+                                uri={`/w185/${item.poster_path}`}
                             />
                         </TouchableOpacity>
                     </Box>
@@ -30,6 +36,7 @@ const CatalogList = ({ data, onPressItem, loading, discoverMovies }) => (
             }
             return null
         }}
+        onScroll={onScroll}
         onEndReachedThreshold={0.5}
         onEndReached={() => {
             {

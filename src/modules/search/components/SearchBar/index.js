@@ -17,7 +17,7 @@ const SearchBar = ({ onChangeText, onBlur, btnText, placeholder }) => {
                 mt={1}
                 animation={'fadeIn'}
                 fullWidth={false}
-                width={'85%'}>
+                width={'100%'}>
                 <TextInput
                     onChangeText={onChangeText}
                     onBlur={onBlur}
@@ -37,9 +37,6 @@ const SearchBar = ({ onChangeText, onBlur, btnText, placeholder }) => {
                     maxLength={30}
                     underlineColorAndroid="transparent"
                 />
-            </Box>
-            <Box px={2}>
-                <Text>{btnText}</Text>
             </Box>
         </Box>
     )

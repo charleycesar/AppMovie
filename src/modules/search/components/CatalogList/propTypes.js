@@ -5,6 +5,7 @@ export const propTypes = {
     onPressItem: PropTypes.func,
     loading: PropTypes.bool,
     discoverMovies: PropTypes.func,
+    onScroll: PropTypes.func,
 }
 
 export const defaultProps = {
@@ -12,4 +13,5 @@ export const defaultProps = {
     onPressItem: () => undefined,
     loading: false,
     discoverMovies: () => undefined,
+    onScroll: () => undefined,
 }
