@@ -13,7 +13,6 @@
     "url": "https://github.com/charleycesar/AppMovie/issues"
   },
   "engines": {
-    "yarn": "1.22.4",
     "node": ">=13.10.1"
   },
   "private": true,

@@ -1,47 +1,49 @@
-# Welcome to AppMovie 👋
+# Bem-vindo ao AppMovie 👋
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://mit-license.org/)
 
-> Este aplicativo permite que você assista filmes. O appMovie utiliza a api do the movie database.
+> Este aplicativo permite que você consulte filmes e tv shows. O appMovie utiliza a api do the movie database.
 
-## Install
+## Requerimentos
 
-### Link fonts
+É necessário instalar as dependências requeridas pelo React Native:
 
-```sh
-react-native link
-yarn install
-```
+-   [Node >= v13.10.1](https://nodejs.org/en/download/package-manager/)
+-   [Android development](https://facebook.github.io/react-native/docs/getting-started.html#installing-dependencies-3)
+-   [iOS development](https://facebook.github.io/react-native/docs/getting-started.html#installing-dependencies)
 
-### Additional Setup ios
+## Instalação de dependências
 
-```sh
-cd ios
-pod install
-```
+Supondo que você tenha todos os requisitos instalados, você pode configurar e executar o projeto executando:
 
-## Usage
+-   `yarn install` para instalar as dependências do projeto
+-   Seguir as etapas abaixo para cada plataforma.
 
-```sh
-yarn ios
-```
+### Android
 
-## Run tests
+-   somente na primeira vez que estiver rodando o projeto, será necessário gerar uma debug key:
+    -   `cd android/app`
+    -   `keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000`
+    -   `cd ../..` Volte para a raiz do projeto
+-   `yarn start` Para iniciar o server
+-   `yarn android` Para buildar o app (o emulador deve estar aberto)
 
-```sh
-yarn test
-```
+### Configurações adicionais IOS
 
-## Troubleshooting
+-   `cd ios` Entrar na pasta do IOS
+-   `pod install` Para instalar as dependências nativas
 
-If react-native link duplicate resource just run this follow command
+## IOS
 
-```sh
-react-native unlink react-native-vector-icons
-```
+-   `yarn start` Para iniciar o server
+-   `yarn ios` Para buildar o app (o emulador deve estar aberto)
 
-## Author
+## Rodar testes
+
+-   `yarn test` Para executar os testes unitários
+
+## Autor
 
 👤 **Charley Oliveira**
 
@@ -49,18 +51,6 @@ react-native unlink react-native-vector-icons
 -   Github: [@charleycesar](https://github.com/charleycesar)
 -   LinkedIn: [@charleydev](https://linkedin.com/in/charleydev)
 
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!
-
-Feel free to check [issues page](https://github.com/charleycesar/AppMovie/issues).
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
 ## 📝 License
 
 Copyright © 2020 [Charley Oliveira](https://github.com/charleycesar).
-
-This project is [MIT](https://mit-license.org/) licensed.

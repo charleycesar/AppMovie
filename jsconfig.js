@@ -5,6 +5,7 @@ System.config({
         '@styles/*': './src/styles/*',
         '@modules/*': './src/modules/*',
         '@UI/*': './src/components/UI/*',
+        '@assets/*': './assets/*',
         '@helpers/*': './src/helpers/*',
         '@schemas/*': './src/schemas/*',
         '@services/*': './src/services/*',
