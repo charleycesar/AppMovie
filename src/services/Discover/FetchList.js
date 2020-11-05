@@ -1,4 +1,4 @@
-import api from '@/services'
+import api, { handleError } from '@/services'
 
 export default (searchType, params) => {
     const TYPES_ALLOWED = ['tv', 'movie']
