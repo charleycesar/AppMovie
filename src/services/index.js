@@ -1,7 +1,8 @@
-import axios from 'axios'
+// import axios from 'axios'
 import { Config } from '@/config'
+import { setup } from 'axios-cache-adapter'
 
-const instance = axios.create({
+const instance = setup({
     baseURL: Config.API_URL,
     headers: {
         Accept: 'application/json',
@@ -12,6 +13,9 @@ const instance = axios.create({
         language: Config.LANGUAGE,
     },
     timeout: 3000,
+    cache: {
+        maxAge: 15 * 60 * 1000,
+    },
 })
 
 export const handleError = ({ message, data, status }) => {

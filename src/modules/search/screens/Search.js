@@ -52,8 +52,7 @@ const Search = () => {
                 setResults(response.data.results)
                 setSearching(false)
             })
-            .catch((error) => {
-                Alert.alert(error.data?.errors?.join('\n'))
+            .catch(() => {
                 setSearching(false)
             })
     }

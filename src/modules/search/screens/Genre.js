@@ -74,8 +74,7 @@ const Genre = () => {
                 setPage(data.page)
                 setLoading(false)
             })
-            .catch((error) => {
-                Alert.alert(error.data?.errors?.join('\n'))
+            .catch(() => {
                 setLoading(false)
             })
     }

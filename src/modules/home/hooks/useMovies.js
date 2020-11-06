@@ -91,14 +91,6 @@ const useMovies = () => {
     }
     const searchMovies = (typeOfSearch, data, multi = false) => {
         const params = getRequestParams(data)
-        if (!connected)
-            return Promise.reject({
-                message: 'Network Error',
-                data: {
-                    errors: ['Sem conexão com internet'],
-                },
-                status: false,
-            })
         if (multi) {
             return MultiSearchFetchList(params)
         }
