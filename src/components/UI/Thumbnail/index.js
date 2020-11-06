@@ -17,7 +17,6 @@ const Thumbnail = ({
     const fullUrl = usePrefix
         ? `${Config.IMAGE_BASE_URL}${fileSize}${uri}`
         : uri
-    console.log(fullUrl)
     return (
         <FastImage
             style={{
