@@ -1,4 +1,4 @@
-# Bem-vindo ao AppMovie 👋
+h# Bem-vindo ao AppMovie 👋
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://mit-license.org/)
@@ -7,12 +7,10 @@
 
 ## Preview
 
-<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_1.png" alt="drawing" width="150" height="300" />
-<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_2.png" alt="drawing" width="150" height="300" />
-<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_3.png" alt="drawing" width="150" height="300" />
-<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_4.png" alt="drawing" width="150" height="300" />
-<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_5.png" alt="drawing" width="150" height="300" />
-<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_6.png" alt="drawing" width="150" height="300" />
+<hr/>
+<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_1.png" alt="drawing" width="150"/><img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_2.png" alt="drawing" width="150"/><img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_3.png" alt="drawing" width="150"/>
+<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_4.png" alt="drawing" width="150"/><img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_5.png" alt="drawing" width="150"/><img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_.png" alt="drawing" width="150"/>
+<hr />
 
 ## Requerimentos
 
