@@ -5,12 +5,14 @@ import { TouchableOpacity } from 'react-native'
 import BackButton from '@modules/navigation/BackButton'
 import { LABELS } from '@modules/search/helpers'
 import ArrowDownIcon from '@UI/Icon/ArrowDownIcon'
+import LoopIcon from '@UI/Icon/LoopIcon'
 import { propTypes, defaultProps } from './propTypes'
 
 const Breadcrumb = ({
     onPressGoBack,
     onPressChoose,
     onPressGenre,
+    onPressSearch,
     choose,
     genre,
 }) => (
@@ -18,7 +20,8 @@ const Breadcrumb = ({
         alignItems={'center'}
         animation={'fadeInDown'}
         direction={'row'}
-        alignItems={'center'}>
+        alignItems={'center'}
+        pb={2}>
         <BackButton htmlColor={'white'} onPress={onPressGoBack} />
         <TouchableOpacity onPress={onPressChoose}>
             <Box
@@ -45,6 +48,17 @@ const Breadcrumb = ({
                 <ArrowDownIcon color={'white'} />
             </Box>
         </TouchableOpacity>
+        <Box
+            height={40}
+            display={'flex'}
+            justifyContent={'center'}
+            alignItems="flex-end">
+            <TouchableOpacity onPress={onPressSearch}>
+                <Box px={4}>
+                    <LoopIcon color={'white'} />
+                </Box>
+            </TouchableOpacity>
+        </Box>
     </Box>
 )
 

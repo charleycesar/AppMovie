@@ -11,8 +11,11 @@ import EmptyState from '@modules/search/components/EmptyState'
 import Box from '@UI/Box'
 import Loading from '@UI/Loading'
 import Text from '@UI/Text'
+import { useNavigation } from '@modules/navigation/hooks'
+import BackButton from '@modules/navigation/BackButton'
 
 const Search = () => {
+    const { goBack } = useNavigation()
     const [searching, setSearching] = React.useState(false)
     const [term, setTerm] = React.useState('')
     const [emptyMessage, setEmptyMessage] = React.useState({
@@ -88,8 +91,11 @@ const Search = () => {
         <Screen fullScreen>
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
                 <>
-                    <Box px={2}>
-                        <Text variant="h4">Busca de filmes e TV Shows</Text>
+                    <Box px={2} py={1} direction={'row'} alignItems={'center'}>
+                        <BackButton htmlColor={'white'} onPress={goBack} />
+                        <Text variant="h4" color="white">
+                            Busca de filmes e TV Shows
+                        </Text>
                     </Box>
                     <SearchBar
                         placeholder={`Pesquise...`}
