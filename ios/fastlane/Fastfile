@@ -30,8 +30,8 @@ platform :ios do
     appicon(
       appicon_image_file: 'fastlane/metadata/splash_screen.jpeg',
       appicon_devices: [:universal],
-      appicon_path: "appMovie/Assets.xcassets",
-      appicon_name: 'Splash.imageset'
+      appicon_path: "appMovie/Images.xcassets",
+      appicon_name: 'SplashIcon.imageset'
     )
   end
 end
