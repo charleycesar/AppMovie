@@ -10,6 +10,7 @@ import DetailsMovie from '@modules/home/components/DetailsMovie'
 import EmptyState from '@modules/search/components/EmptyState'
 import Box from '@UI/Box'
 import Loading from '@UI/Loading'
+import Text from '@UI/Text'
 
 const Search = () => {
     const [searching, setSearching] = React.useState(false)
@@ -87,6 +88,9 @@ const Search = () => {
         <Screen fullScreen>
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
                 <>
+                    <Box px={2}>
+                        <Text variant="h4">Busca de filmes</Text>
+                    </Box>
                     <SearchBar
                         placeholder={`Pesquise...`}
                         onChangeText={(text) => setTerm(text)}

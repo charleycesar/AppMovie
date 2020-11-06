@@ -9,15 +9,13 @@ const SearchBar = ({ onChangeText, onBlur, btnText, placeholder }) => {
     const theme = useTheme()
 
     return (
-        <Box direction="row" alignItems="center" pr={1}>
+        <Box direction="row" alignItems="center" px={2} pb={2}>
             <Box
                 p={2}
                 border={{ radius: 8 }}
                 bgcolor={theme.palette.grey.main}
                 mt={1}
-                animation={'fadeIn'}
-                fullWidth={false}
-                width={'100%'}>
+                animation={'fadeIn'}>
                 <TextInput
                     onChangeText={onChangeText}
                     onBlur={onBlur}
