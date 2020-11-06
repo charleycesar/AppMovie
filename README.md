@@ -5,6 +5,13 @@
 
 > Este aplicativo permite que você consulte filmes e tv shows. O appMovie utiliza a api do the movie database.
 
+## Preview
+
+![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_1.png)
+![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_2.png)
+![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_3.png)
+![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_4.png)
+
 ## Requerimentos
 
 É necessário instalar as dependências requeridas pelo React Native:
