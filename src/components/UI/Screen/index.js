@@ -32,7 +32,7 @@ const Screen = ({
             />
             {!connected ? (
                 <Snackbar
-                    visible={!toast}
+                    visible={false}
                     onDismiss={() => setToast(!toast)}
                     duration={3000}>
                     Não há conexão com internet.
