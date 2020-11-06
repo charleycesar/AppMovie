@@ -31,7 +31,7 @@ platform :android do
       appicon_image_file: 'fastlane/metadata/splash_screen.jpeg',
       appicon_icon_types: [:splash_port],
       appicon_path: 'app/src/main/res/drawable',
-      appicon_filename: 'splash'
+      appicon_filename: 'splash_icon'
     )
   end
 end
