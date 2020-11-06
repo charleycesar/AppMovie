@@ -54,6 +54,7 @@ const useGenres = () => {
             const genres = realm
                 .objects('Genre')
                 .filtered(`type_search = '${typeSearch}'`)
+                .sorted('name', false)
             setGenres(Array.from(genres))
         } catch (error) {
             alert(
