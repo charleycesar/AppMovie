@@ -7,12 +7,12 @@
 
 ## Preview
 
-![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_1.png)
-![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_2.png)
-![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_3.png)
-![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_4.png)
-![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_5.png)
-![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_6.png)
+<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_1.png" alt="drawing" width="150" height="300" />
+<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_2.png" alt="drawing" width="150" height="300" />
+<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_3.png" alt="drawing" width="150" height="300" />
+<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_4.png" alt="drawing" width="150" height="300" />
+<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_5.png" alt="drawing" width="150" height="300" />
+<img src="https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_6.png" alt="drawing" width="150" height="300" />
 
 ## Requerimentos
 
