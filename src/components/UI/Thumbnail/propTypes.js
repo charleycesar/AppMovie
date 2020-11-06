@@ -6,6 +6,7 @@ export const propTypes = {
     height: PropTypes.number,
     borderRadius: PropTypes.number,
     usePrefixUri: PropTypes.bool,
+    fileSize: PropTypes.string,
 }
 
 export const defaultProps = {
@@ -15,4 +16,5 @@ export const defaultProps = {
     borderRadius: 8,
     noBorderRadius: false,
     usePrefix: true,
+    fileSize: '/w200',
 }

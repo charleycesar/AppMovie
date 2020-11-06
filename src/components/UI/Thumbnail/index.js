@@ -11,9 +11,13 @@ const Thumbnail = ({
     borderRadius,
     noBorderRadius,
     usePrefix,
+    fileSize,
 }) => {
     const [loading, setLoading] = React.useState(false)
-    const fullUrl = usePrefix ? `${Config.IMAGE_BASE_URL}${uri}` : uri
+    const fullUrl = usePrefix
+        ? `${Config.IMAGE_BASE_URL}${fileSize}${uri}`
+        : uri
+    console.log(fullUrl)
     return (
         <FastImage
             style={{

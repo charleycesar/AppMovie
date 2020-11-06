@@ -26,7 +26,7 @@ const MovieList = ({ title, movies, onMoviePress }) => {
                         <MovieCard
                             data={{
                                 title: item.title,
-                                uri: `/w200${item.poster_path}`,
+                                uri: `${item.poster_path}`,
                                 release_date: item.release_date,
                             }}
                             key={item.title}

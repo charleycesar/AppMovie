@@ -13,7 +13,7 @@ const DetailsMovie = ({ movie, size }) => {
     return (
         <Box p={1} animation={'fadeIn'}>
             <Box direction={'row'} py={0.5}>
-                <Thumbnail uri={`/${size}${movie.poster_path}`} />
+                <Thumbnail uri={`${movie.poster_path}`} />
                 <Box px={1}>
                     <Text variant={'h6'} color={'white'} numberOfLines={2}>
                         {movie.title}

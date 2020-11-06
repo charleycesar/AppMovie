@@ -30,7 +30,7 @@ const CatalogList = ({
                                 <Thumbnail
                                     width={getScreenDimensions().width / 2}
                                     height={200}
-                                    uri={`/w185/${item.poster_path}`}
+                                    uri={`${item.poster_path}`}
                                 />
                             </TouchableOpacity>
                         </Box>
