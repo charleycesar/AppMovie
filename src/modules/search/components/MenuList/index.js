@@ -10,7 +10,7 @@ const MenuList = ({ onPress, data, title }) => {
     }
 
     return (
-        <Box py={2} animation={'bounceIn'}>
+        <Box py={2} animation={'fadeInDown'}>
             <Box direction={'row'} p={2}>
                 <Text variant="h4" align="center" color="white">
                     {title}
