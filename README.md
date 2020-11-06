@@ -11,6 +11,8 @@
 ![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_2.png)
 ![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_3.png)
 ![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_4.png)
+![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_5.png)
+![](https://raw.githubusercontent.com/charleycesar/AppMovie/master/assets/screenshots/screen_6.png)
 
 ## Requerimentos
 
