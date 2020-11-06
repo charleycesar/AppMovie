@@ -43,7 +43,7 @@ Supondo que você tenha todos os requisitos instalados, você pode configurar e 
 -   `cd ios` Entrar na pasta do IOS
 -   `pod install` Para instalar as dependências nativas
 
-## IOS
+### IOS
 
 -   `yarn start` Para iniciar o server
 -   `yarn ios` Para buildar o app (o emulador deve estar aberto)
