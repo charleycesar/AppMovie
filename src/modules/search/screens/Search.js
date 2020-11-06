@@ -89,7 +89,7 @@ const Search = () => {
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
                 <>
                     <Box px={2}>
-                        <Text variant="h4">Busca de filmes</Text>
+                        <Text variant="h4">Busca de filmes e TV Shows</Text>
                     </Box>
                     <SearchBar
                         placeholder={`Pesquise...`}

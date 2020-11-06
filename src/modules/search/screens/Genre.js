@@ -108,7 +108,7 @@ const Genre = () => {
                 <MenuList
                     onPress={onPressGenre}
                     data={genres}
-                    title={'Todos os gêneros'}
+                    title={'Selecione um gênero'}
                 />
             </Box>
         )
