@@ -15,7 +15,7 @@ const Loading = ({ fullScreen, size, zIndex }) => {
         </View>
     ) : (
         <Box alignItems="center" justifyContent="center">
-            <ActivityIndicator size={sizeLoading} />
+            <ActivityIndicator size={sizeLoading} color={'white'} />
         </Box>
     )
 }

@@ -4,6 +4,7 @@ import { getScreenDimensions } from '@helpers/screen'
 import { propTypes, defaultProps } from './propTypes'
 import React from 'react'
 import { TouchableOpacity, FlatList } from 'react-native'
+import Loading from '@UI/Loading'
 
 const CatalogList = ({
     data,
@@ -12,39 +13,48 @@ const CatalogList = ({
     discoverMovies,
     onScroll,
 }) => (
-    <FlatList
-        data={data}
-        numColumns={2}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => {
-            if (item.poster_path) {
-                return (
-                    <Box
-                        fullWidth={false}
-                        width={'50%'}
-                        py={2}
-                        alignItems={'center'}>
-                        <TouchableOpacity onPress={() => onPressItem(item)}>
-                            <Thumbnail
-                                width={getScreenDimensions().width / 2}
-                                height={200}
-                                uri={`/w185/${item.poster_path}`}
-                            />
-                        </TouchableOpacity>
+    <Box alignItems="center">
+        <FlatList
+            data={data}
+            numColumns={2}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={({ item }) => {
+                if (item.poster_path) {
+                    return (
+                        <Box
+                            fullWidth={false}
+                            width={'50%'}
+                            py={2}
+                            alignItems={'center'}>
+                            <TouchableOpacity onPress={() => onPressItem(item)}>
+                                <Thumbnail
+                                    width={getScreenDimensions().width / 2}
+                                    height={200}
+                                    uri={`/w185/${item.poster_path}`}
+                                />
+                            </TouchableOpacity>
+                        </Box>
+                    )
+                }
+                return null
+            }}
+            ListFooterComponent={() => {
+                return loading ? (
+                    <Box fullWidth={false} justifyContent={'center'}>
+                        <Loading />
                     </Box>
-                )
-            }
-            return null
-        }}
-        onScroll={onScroll}
-        onEndReachedThreshold={0.5}
-        onEndReached={() => {
-            {
-                !loading && discoverMovies()
-            }
-        }}
-        scrollEventThrottle={400}
-    />
+                ) : null
+            }}
+            onScroll={onScroll}
+            onEndReachedThreshold={0.5}
+            onEndReached={() => {
+                {
+                    !loading && discoverMovies()
+                }
+            }}
+            scrollEventThrottle={400}
+        />
+    </Box>
 )
 
 CatalogList.propTypes = {
