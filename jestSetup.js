@@ -27,6 +27,10 @@ jest.mock('axios-cache-adapter', () => {
                     const moviesMock = require('@mocks/movies.json')
                     return Promise.resolve(moviesMock)
                 }
+                if (url === 'movie/1') {
+                    const moviesMock = require('@mocks/movies.json')
+                    return Promise.resolve({ data: moviesMock.results[0] })
+                }
             }),
         }),
     }
