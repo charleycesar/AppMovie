@@ -11,7 +11,6 @@ describe(`Testing ${componentName}`, () => {
         const renderComponent = renderWithTheme(<AppMovieSplash />)
 
         this.getTestID = renderComponent.getByTestId
-        this.props = getPropsComponent(renderComponent)
     })
 
     it('check if has prop testID', () => {

@@ -16,7 +16,7 @@ plugins.push([
             '@helpers': './src/helpers',
             '@schemas': './src/schemas',
             '@services': './src/services',
-            '@mocks': './__mocks__',
+            '@mocks': './__mock__',
             '@tests': './tests',
         },
     },

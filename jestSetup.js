@@ -39,3 +39,10 @@ jest.mock('axios-cache-adapter', () => {
         }),
     }
 })
+
+jest.mock(
+    '@modules/navigation/hooks',
+    () => require('@mocks/react-navigation').useNavigation,
+)
+
+jest.mock('realm', () => require('@mocks/realm').default)
