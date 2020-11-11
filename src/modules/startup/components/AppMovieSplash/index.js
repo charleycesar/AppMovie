@@ -15,6 +15,7 @@ const AppMovieSplash = () => {
             direction="column"
             alignItems="center"
             justifyContent="space-around"
+            testID="AppMovieSplash-component"
             bgcolor={theme.palette.primary.main}
             height="100%"
             animation="bounceInUp">
@@ -23,6 +24,7 @@ const AppMovieSplash = () => {
                 autoPlay
                 loop
                 source={animation}
+                testID={'AppMovieSplash-animation'}
             />
         </Box>
     )

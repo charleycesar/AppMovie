@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 
 export const propTypes = {
+    testID: PropTypes.string,
     bgcolor: PropTypes.string,
     display: PropTypes.oneOf(['none', 'view', 'flex']),
     direction: PropTypes.oneOf(['row', 'column']),
@@ -46,6 +47,7 @@ export const propTypes = {
 }
 
 export const defaultProps = {
+    testID: '',
     bgcolor: undefined,
     display: 'view',
     alignItems: 'flex-start',

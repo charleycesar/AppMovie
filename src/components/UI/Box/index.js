@@ -7,6 +7,7 @@ import { propTypes, defaultProps } from './propTypes'
 
 const TheBox = (props) => {
     const {
+        testID,
         m,
         mt,
         mr,
@@ -96,6 +97,7 @@ const TheBox = (props) => {
 
     return (
         <Animatable.View
+            testID={testID}
             style={[
                 localStyle.Box,
                 localStyle[`align-${alignItems}`],
