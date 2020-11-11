@@ -1,4 +1,5 @@
 import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock'
+import { NativeModules, View as mockView } from 'react-native'
 
 jest.mock('@react-native-community/async-storage', () => mockAsyncStorage)
 jest.mock('react-native-gesture-handler', () => {})
@@ -46,3 +47,29 @@ jest.mock(
 )
 
 jest.mock('realm', () => require('@mocks/realm').default)
+
+jest.mock('react-native-reanimated', () => {
+    return {
+        Value: jest.fn(),
+        event: jest.fn(),
+        add: jest.fn(),
+        eq: jest.fn(),
+        set: jest.fn(),
+        cond: jest.fn(),
+        interpolate: jest.fn(),
+        View: mockView,
+        Extrapolate: { CLAMP: jest.fn() },
+    }
+})
+
+NativeModules.RNCNetInfo = {
+    getCurrentState: jest.fn(() => Promise.resolve()),
+    addListener: jest.fn(),
+    removeListeners: jest.fn(),
+}
+
+const mockDispatch = jest.fn()
+jest.mock('react-redux', () => ({
+    useSelector: jest.fn(),
+    useDispatch: () => mockDispatch,
+}))

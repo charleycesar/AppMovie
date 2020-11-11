@@ -50,7 +50,7 @@ const useMovies = () => {
     )
 
     React.useEffect(() => {
-        if (popularFromApi.results !== undefined) {
+        if (popularFromApi?.results !== undefined) {
             setPopularMovies({
                 results: popularFromApi.results,
                 title: 'Popular',
@@ -59,7 +59,7 @@ const useMovies = () => {
     }, [popularFromApi])
 
     React.useEffect(() => {
-        if (popularFromApi.results !== undefined) {
+        if (popularFromApi?.results !== undefined) {
             setTopRatedMovies({
                 results: topRatedMoviesFromApi.results,
                 title: 'Melhores avaliados',
@@ -68,7 +68,7 @@ const useMovies = () => {
     }, [topRatedMoviesFromApi])
 
     React.useEffect(() => {
-        if (movieDetailsFromApi.item !== undefined) {
+        if (movieDetailsFromApi?.item !== undefined) {
             setMovieDetails(movieDetailsFromApi.item)
         }
     }, [movieDetailsFromApi])

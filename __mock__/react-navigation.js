@@ -7,4 +7,11 @@ export const useNavigation = {
         openDrawer: jest.fn(),
         closeDrawer: jest.fn(),
     }),
+    useRoute: () => ({
+        openDrawer: jest.fn(),
+        closeDrawer: jest.fn(),
+        params: {
+            typeSearch: 'movie',
+        },
+    }),
 }

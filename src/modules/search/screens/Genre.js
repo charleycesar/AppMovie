@@ -4,7 +4,6 @@ import { useRoute, useNavigation } from '@modules/navigation/hooks'
 import useGenres from '@modules/search/hooks/useGenres'
 import MenuList from '@modules/search/components/MenuList'
 import Box from '@UI/Box'
-import { Alert } from 'react-native'
 import useMovies from '@modules/home/hooks/useMovies'
 import DetailsMovie from '@modules/home/components/DetailsMovie'
 import BottomSheet from '@UI/BottomSheet'
@@ -92,7 +91,10 @@ const Genre = () => {
 
     if (!choose.name) {
         return (
-            <Box justifyContent="center" display="flex">
+            <Box
+                justifyContent="center"
+                display="flex"
+                testID={'Genre-MenuList-container'}>
                 <MenuList
                     onPress={onPressChoose}
                     data={optionsChoose}
