@@ -9,5 +9,6 @@ System.config({
         '@helpers/*': './src/helpers/*',
         '@schemas/*': './src/schemas/*',
         '@services/*': './src/services/*',
+        '@mocks/*': './__mocks__/*',
     },
 })

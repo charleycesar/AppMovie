@@ -1,0 +1,26 @@
+{
+    "page": 1,
+    "total_results": 10000,
+    "total_pages": 500,
+    "results": [
+      {
+        "original_name": "The Good Doctor",
+        "genre_ids": [
+          18
+        ],
+        "name": "The Good Doctor",
+        "popularity": 1339.013,
+        "origin_country": [
+          "US"
+        ],
+        "vote_count": 5460,
+        "first_air_date": "2017-09-25",
+        "backdrop_path": "\/iDbIEpCM9nhoayUDTwqFL1iVwzb.jpg",
+        "original_language": "en",
+        "id": 71712,
+        "vote_average": 8.6,
+        "overview": "A young surgeon with Savant syndrome is recruited into the surgical unit of a prestigious hospital. The question will arise: can a person who doesn't have the ability to relate to people actually save their lives?",
+        "poster_path": "\/6tfT03sGp9k4c0J3dypjrI8TSAI.jpg"
+      }
+    ]
+  }
