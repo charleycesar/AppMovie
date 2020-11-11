@@ -23,6 +23,10 @@ jest.mock('axios-cache-adapter', () => {
                     const genreMock = require('@mocks/genres.json')
                     return Promise.resolve(genreMock)
                 }
+                if (url === 'movie/popular') {
+                    const moviesMock = require('@mocks/movies.json')
+                    return Promise.resolve(moviesMock)
+                }
             }),
         }),
     }
