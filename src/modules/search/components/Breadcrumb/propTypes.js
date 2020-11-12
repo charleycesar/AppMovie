@@ -14,6 +14,6 @@ export const defaultProps = {
     onPressChoose: () => undefined,
     onPressGenre: () => undefined,
     onPressSearch: () => undefined,
-    choose: { name: '', value: '' },
+    choose: { name: '', value: 'tv' },
     genre: { name: '', id: '' },
 }
