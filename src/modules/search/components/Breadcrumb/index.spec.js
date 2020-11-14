@@ -92,4 +92,13 @@ describe(`Testing ${componentName}`, () => {
         const search = queryAllByText(`Filmes`)
         expect(search).toHaveLength(1)
     })
+
+    it('check render correct label for choose-name and genre should be "não informado"', () => {
+        const { queryAllByText } = renderWithTheme(
+            <Breadcrumb choose={{ value: '' }} />,
+        )
+
+        const search = queryAllByText(`não informado`)
+        expect(search).toHaveLength(2)
+    })
 })

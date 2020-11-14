@@ -42,7 +42,7 @@ const Breadcrumb = ({
                     color="white"
                     fullWidth={false}
                     testID={'Breadcrumb-choose-name'}>
-                    {LABELS[choose.value].name || 'não informado'}
+                    {LABELS[choose.value]?.name || 'não informado'}
                 </Text>
                 <ArrowDownIcon color={'white'} />
             </Box>
